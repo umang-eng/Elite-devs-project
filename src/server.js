@@ -1,6 +1,7 @@
 // Import necessary modules
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // Import the cors package
 
 // Initialize the Express app
 const app = express();
@@ -11,7 +12,12 @@ const PORT = process.env.PORT || 3000;
 
 // --- Middleware ---
 
+// Enable CORS for all routes
+// This will allow your Netlify frontend to communicate with this backend.
+app.use(cors());
+
 // Serve static files (like HTML, CSS, images) from the 'public' directory
+// NOTE: This is not needed for the backend-only deployment on Render, but doesn't hurt.
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Parse incoming JSON payloads. This is needed to read data from the contact form.
@@ -43,12 +49,6 @@ app.post('/submit-form', (req, res) => {
     // Send a success response back to the frontend
     // The status(200) means 'OK'
     res.status(200).json({ message: 'Form submitted successfully!' });
-});
-
-// Catch-all route to serve the main index.html for any other request
-// This helps with client-side routing if you add it later.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
 

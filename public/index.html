@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteDevs - Your Dedicated Freelance Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animate On Scroll Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1a202c;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .cta-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+        }
+        .section-title {
+            border-bottom: 3px solid #f97316;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .service-card, .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        /* Mobile Menu Styles */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .body-no-scroll {
+            overflow: hidden;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <a href="index.html" class="text-3xl font-bold text-orange-500">Elite<span class="text-white">Devs</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="hover:text-orange-500 transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-orange-500 transition-colors">Portfolio</a>
+                <a href="team.html" class="hover:text-orange-500 transition-colors">Our Team</a>
+                <a href="contact.html" class="hover:text-orange-500 transition-colors">Contact</a>
+                <a href="contact.html" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-lg cta-button">Get a Quote</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Slide-in) -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-3/4 max-w-sm bg-slate-900 text-white z-50 p-8 transform -translate-x-full md:hidden">
+        <button id="close-menu-button" class="absolute top-5 right-5 text-3xl">&times;</button>
+        <nav class="flex flex-col space-y-8 mt-16 text-xl">
+            <a href="#services" class="mobile-link hover:text-orange-500">Services</a>
+            <a href="portfolio.html" class="mobile-link hover:text-orange-500">Portfolio</a>
+            <a href="team.html" class="mobile-link hover:text-orange-500">Our Team</a>
+            <a href="contact.html" class="mobile-link hover:text-orange-500">Contact</a>
+            <a href="contact.html" class="mobile-link bg-orange-500 text-white font-bold py-3 px-6 rounded-lg text-center mt-4 cta-button">Get a Quote</a>
+        </nav>
+    </div>
+
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-bg text-white text-center py-20 md:py-32">
+            <div class="container mx-auto px-4" data-aos="fade-in" data-aos-duration="1000">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Your Vision, Expertly Crafted.</h2>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">We are a dedicated team of freelance professionals, transforming your ideas into powerful digital solutions. No middlemen, just direct collaboration and exceptional results.</p>
+                <a href="contact.html" class="bg-orange-500 text-white font-bold py-4 px-10 rounded-lg text-lg cta-button inline-block">Start Your Project Today</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-4xl font-bold mb-4 section-title" data-aos="fade-up">What We Do</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">We offer a complete suite of services to bring your project to life from start to finish.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-orange-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Web Development</h4>
+                        <p class="text-slate-600">Building responsive, high-performance websites and web applications tailored to your specific business needs.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                         <div class="text-orange-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Mobile App Design</h4>
+                        <p class="text-slate-600">Creating intuitive and engaging mobile experiences for both iOS and Android platforms.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+                         <div class="text-orange-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">UI/UX Design</h4>
+                        <p class="text-slate-600">Designing beautiful, user-centric interfaces that are both easy to use and aesthetically pleasing.</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-orange-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Backend Development</h4>
+                        <p class="text-slate-600">Engineering robust, scalable, and secure server-side logic, APIs, and databases that power your applications.</p>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-orange-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M12 4.5V3m0 18v-1.5m3.75-15H12m9 7.5h-1.5M12 19.5v-1.5m0-15V3m-3.75 1.5H12m-9 7.5h1.5m9-7.5h1.5" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6v6H9V9z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">AI & ML Solutions</h4>
+                        <p class="text-slate-600">Integrating intelligent algorithms and machine learning models to automate processes, derive insights, and create smarter applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Partner With Us Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center" data-aos="fade-up">
+                    <h3 class="text-4xl font-bold mb-4 section-title">Why Partner With Us?</h3>
+                    <p class="text-slate-600 max-w-2xl mx-auto mb-12">We're not just freelancers; we're your dedicated partners in success.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="800">
+                         <div class="video-container shadow-xl">
+                            <video src="https://videos.pexels.com/video-files/3255275/3255275-hd_1920_1080_25fps.mp4" autoplay loop muted playsinline></video>
+                         </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6" data-aos="fade-left" data-aos-duration="800">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Direct Expert Access</h4>
+                                <p class="text-slate-600">You work directly with the developers and designers building your project. This means clear communication and a deeper understanding of your vision.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                             <div class="flex-shrink-0 h-12 w-12 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Uncompromising Quality</h4>
+                                <p class="text-slate-600">Our collective experience ensures we adhere to the highest standards, delivering polished, robust, and reliable solutions every time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                             <div class="flex-shrink-0 h-12 w-12 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">Streamlined & Efficient</h4>
+                                <p class="text-slate-600">Without the overhead of an agency, we're agile, flexible, and focused solely on what matters: delivering your project on time and on budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-slate-900 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-4xl font-bold mb-4 section-title border-orange-500" data-aos="fade-up">What Our Clients Say</h3>
+                <p class="text-slate-300 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Your trust is our most valuable asset.</p>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-card bg-slate-800 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-slate-300 mb-4">"Working with this team was a game-changer. Their direct communication and expertise made the entire process seamless. The final product exceeded all our expectations."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/ffffff/334155?text=JS" class="w-12 h-12 rounded-full mr-4" alt="Client Jane Smith">
+                            <div>
+                                <h5 class="font-bold">Jane Smith</h5>
+                                <p class="text-sm text-slate-400">CEO, Tech Innovators</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-card bg-slate-800 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                        <p class="text-slate-300 mb-4">"The quality and speed of their work is unmatched. They understood our vision from day one and delivered a website that has significantly boosted our engagement."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/ffffff/334155?text=MD" class="w-12 h-12 rounded-full mr-4" alt="Client Mark Doe">
+                            <div>
+                                <h5 class="font-bold">Mark Doe</h5>
+                                <p class="text-sm text-slate-400">Founder, Creative Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-2xl font-bold text-orange-500 mb-2">Elite<span class="text-white">Devs</span></h4>
+            <p class="text-slate-400 mb-4">Crafting digital excellence, one project at a time.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-orange-500 transition-colors">Twitter</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">GitHub</a>
+            </div>
+            <p class="text-slate-500">&copy; 2024 EliteDevs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animate On Scroll Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true, // Whether animation should happen only once - while scrolling down
+            duration: 600, // values from 0 to 3000, with step 50ms
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const body = document.body;
+
+            function openMenu() {
+                mobileMenu.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+                body.classList.add('body-no-scroll');
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.add('-translate-x-full');
+                menuOverlay.classList.add('hidden');
+                body.classList.remove('body-no-scroll');
+            }
+
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openMenu();
+            });
+            
+            closeMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            menuOverlay.addEventListener('click', closeMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (link.getAttribute('href').startsWith('#')) {
+                        closeMenu();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

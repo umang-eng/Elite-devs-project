@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - EliteDevs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            border-bottom: 3px solid #f97316;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        /* Mobile Menu Styles */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .body-no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <a href="index.html" class="text-3xl font-bold text-orange-500">Elite<span class="text-white">Devs</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#services" class="hover:text-orange-500 transition-colors">Services</a>
+                <a href="index.html#portfolio" class="hover:text-orange-500 transition-colors">Our Work</a>
+                <a href="index.html#about" class="hover:text-orange-500 transition-colors">Why Us</a>
+                <a href="team.html" class="text-orange-500 font-bold">Our Team</a>
+                <a href="index.html#contact" class="hover:text-orange-500 transition-colors">Contact</a>
+                <a href="index.html#contact" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-lg cta-button">Get a Quote</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Slide-in) -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-3/4 max-w-sm bg-slate-900 text-white z-50 p-8 transform -translate-x-full md:hidden">
+        <button id="close-menu-button" class="absolute top-5 right-5 text-3xl">&times;</button>
+        <nav class="flex flex-col space-y-8 mt-16 text-xl">
+            <a href="index.html#services" class="mobile-link hover:text-orange-500">Services</a>
+            <a href="index.html#portfolio" class="mobile-link hover:text-orange-500">Our Work</a>
+            <a href="index.html#about" class="mobile-link hover:text-orange-500">Why Us</a>
+            <a href="team.html" class="mobile-link text-orange-500 font-bold">Our Team</a>
+            <a href="index.html#contact" class="mobile-link hover:text-orange-500">Contact</a>
+            <a href="index.html#contact" class="mobile-link bg-orange-500 text-white font-bold py-3 px-6 rounded-lg text-center mt-4 cta-button">Get a Quote</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Meet Our Experts</h1>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">The creative minds and technical wizards dedicated to bringing your vision to life. We are a collective of passionate professionals who love what we do.</p>
+            </div>
+
+            <!-- Team Members Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Team Card 1 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/f97316/ffffff?text=Ava" alt="Team Leader" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Ava Chen</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Team Leader / Project Manager</p>
+                        <p class="text-slate-600 mb-4">Ava coordinates our efforts, keeps projects on track, and ensures we deliver excellence on time.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 2 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/3b82f6/ffffff?text=Leo" alt="UI/UX Designer" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Leo Kim</h3>
+                        <p class="text-orange-500 font-semibold mb-3">UI/UX Designer</p>
+                        <p class="text-slate-600 mb-4">Leo designs how the app looks and feels, focusing on creating intuitive and beautiful user experiences.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 3 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/10b981/ffffff?text=Mia" alt="Frontend Developer" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Mia Rodriguez</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Frontend Developer</p>
+                        <p class="text-slate-600 mb-4">Mia builds the visual parts of the application, from buttons to user interactions, using modern frameworks.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 4 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/6366f1/ffffff?text=Noah" alt="Frontend Developer" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Noah Patel</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Frontend Developer</p>
+                        <p class="text-slate-600 mb-4">Noah specializes in responsive design and creating seamless user interfaces with clean, efficient code.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 5 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/8b5cf6/ffffff?text=Isla" alt="Backend Developer" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Isla Wang</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Backend Developer</p>
+                        <p class="text-slate-600 mb-4">Isla builds the core logic, databases, and APIs that power our applications from behind the scenes.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 6 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/ec4899/ffffff?text=Finn" alt="Backend Developer" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Finn Campbell</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Backend Developer</p>
+                        <p class="text-slate-600 mb-4">Finn focuses on server architecture, security, and ensuring our systems are both powerful and scalable.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 7 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/f59e0b/ffffff?text=Zoe" alt="QA Tester" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Zoe Williams</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Tester / QA</p>
+                        <p class="text-slate-600 mb-4">Zoe meticulously finds bugs and helps improve reliability, ensuring a polished final product.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card 8 -->
+                <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="bg-slate-200">
+                        <img src="https://placehold.co/400x400/ef4444/ffffff?text=Sam" alt="Content Creator" class="w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900">Sam Jones</h3>
+                        <p class="text-orange-500 font-semibold mb-3">Content Creator / Documenter</p>
+                        <p class="text-slate-600 mb-4">Sam explains the problems we solve, writes clear documentation, and prepares the final project pitch.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-orange-500 mb-2">Elite<span class="text-white">Devs</span></a>
+            <p class="text-slate-400 mb-4">Crafting digital excellence, one project at a time.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-orange-500 transition-colors">Twitter</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">GitHub</a>
+            </div>
+            <p class="text-slate-500">&copy; 2024 EliteDevs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const body = document.body;
+
+            function openMenu() {
+                mobileMenu.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+                body.classList.add('body-no-scroll');
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.add('-translate-x-full');
+                menuOverlay.classList.add('hidden');
+                body.classList.remove('body-no-scroll');
+            }
+
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openMenu();
+            });
+            
+            closeMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            menuOverlay.addEventListener('click', closeMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // This will close the menu when any link is clicked,
+                    // allowing navigation to happen smoothly.
+                    closeMenu();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
